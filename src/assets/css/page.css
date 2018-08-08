@@ -1,0 +1,10 @@
+@import 'base.css';
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 100px;
+}

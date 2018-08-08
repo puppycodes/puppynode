@@ -1,0 +1,103 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "build": "DEBUG=metalsmith* npm run clean && npm run build:webpack && npm run build:metalsmith",
+    "build:prod": "NODE_ENV=production npm run build",
+    "build:metalsmith": "babel-node src/scripts/build-metalsmith.js",
+    "build:webpack": "npm run clean:webpack && webpack",
+    "clean": "npm run clean:metalsmith && npm run clean:webpack",
+    "clean:metalsmith": "rimraf dist/site/*",
+    "clean:webpack": "rimraf dist/assets/*",
+    "dev": "npm run clean && DEBUG=metalsmith* nodemon --watch src/scripts --exec babel-node src/scripts/run-dev-server.js",
+    "server": "npm run build && http-server dist/site",
+    "deploy": "npm run test && npm run build:prod && gh-pages -d dist/site",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint src test",
+    "lint:css": "stylelint src/assets/css/**/*.css",
+    "test": "npm run lint && npm run test:build-process",
+    "test:build-process": "npm run build",
+    "preversion": "npm test",
+    "version": "npm run build && git add -f dist",
+    "postversion": "git push && git push --tags",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
+  },
+  "repository": {
+    "url": "",
+    "type": "git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "Alice Barker <woof@puppy.codes>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "CONTRIBUTING.md"
+  ],
+  "release": {
+    "verifyConditions": ""
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-preset-stage-0": "6.24.1",
+    "browser-sync": "^2.18.8",
+    "bs-fullscreen-message": "^1.1.0",
+    "cli-table2": "^0.2.0",
+    "css-loader": "^0.28.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "debug": "^3.1.0",
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "filesize": "^3.5.6",
+    "gh-pages": "^1.0.0",
+    "handlebars": "^4.0.6",
+    "http-server": "^0.11.0",
+    "husky": "^0.14.3",
+    "metalsmith": "^2.2.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-fingerprint-ignore": "^2.0.0",
+    "metalsmith-layouts": "1.8.1",
+    "metalsmith-markdownit": "^0.4.0",
+    "nodemon": "^1.11.0",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-reporter": "^5.0.0",
+    "postcss-url": "^7.1.2",
+    "rimraf": "^2.5.4",
+    "semantic-release": "^8.2.0",
+    "style-loader": "^0.19.0",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "1.12.0",
+    "write-file-webpack-plugin": "^4.0.2"
+  }
+}
