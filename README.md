@@ -97,5 +97,4 @@ With `yarn deploy` (or `npm run deploy`) you can deploy to GitHub pages via [gh-
 
 Running `yarn server` (or `npm run server`) will spawn a production server so you can see how the deploy turned out!
 
-
-yay :peach:
+woof!
