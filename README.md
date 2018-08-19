@@ -7,7 +7,7 @@
 
 ## Installation
 
-if you to play with yarn:
+yarn it:
 
 ```js
 yarn
