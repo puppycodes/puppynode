@@ -1,3 +1,5 @@
+@import "https://buffy-assets.nyc3.digitaloceanspaces.com/Standard-CT/stylesheet.css";
+
 html {
   font-family: 'palatino';
   text-transform: uppercase;
@@ -10,4 +12,15 @@ html {
 body {
   padding: 5vw 5vh;
   background-color: #fff;
+}
+
+.logo {
+  display: inline-block;
+  float: right;
+}
+
+.logotype {
+  display: inline-block;
+  font-family: "Standard CT";
+  text-transform: capitalize;
 }

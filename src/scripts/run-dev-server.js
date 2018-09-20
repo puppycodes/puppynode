@@ -78,6 +78,7 @@ browserSync.init({
   server: paths.serverRoot,
   open: false,
   logFileChanges: true,
+  ghostMode: false,
   middleware: [
     webpackMiddleware
   ],
