@@ -2,6 +2,8 @@ const { join } = require('path')
 const Webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 const paths = require('./src/config/paths')
 
@@ -37,6 +39,32 @@ const config = {
     new ExtractTextPlugin({
       filename: 'page.css',
       allChunks: true
+    }),
+    new WebpackPwaManifest({
+      name: 'Soft-Space',
+      includeDirectory: true,
+      filename: '../manifest/manifest.json',
+      start_url: './',
+      display: 'fullscreen',
+      theme_color: '#ffffff',
+      short_name: 'Soft',
+      fingerprints: false,
+      description: 'Buffy Soft-Space',
+      background_color: '#ffffff',
+      crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: join(paths.webpackSource, '/icons/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512]
+        },
+        {
+          src: join(paths.webpackSource, '/icons/large-icon.png'),
+          size: '1024x1024'
+        }
+      ]
+    }),
+    new WorkboxPlugin.GenerateSW({
+      swDest: '../manifest/sw.js'
     })
   ]
 }

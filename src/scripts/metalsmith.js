@@ -18,6 +18,10 @@ export default new Metalsmith(paths.projectRoot)
     source: './dist/assets',
     destination: './assets'
   }))
+  .use(assets({
+    source: './dist/manifest',
+    destination: './'
+  }))
   .use(fingerprint({ pattern: 'assets/page.css' }))
   .use(fingerprint({ pattern: 'assets/immediate.js' }))
   .use(fingerprint({ pattern: 'assets/page.js' }))
