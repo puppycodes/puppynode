@@ -1,26 +1,8 @@
-@import "https://buffy-assets.nyc3.digitaloceanspaces.com/Standard-CT/stylesheet.css";
-
 html {
-  font-family: 'palatino';
-  text-transform: uppercase;
-
-  &.no-js body::before {
-    content: 'Javascript is disabled or not ready yet';
-  }
+  font-family: 'Helvetica';
 }
 
 body {
   padding: 5vw 5vh;
   background-color: #fff;
-}
-
-.logo {
-  display: inline-block;
-  float: right;
-}
-
-.logotype {
-  display: inline-block;
-  font-family: "Standard CT";
-  text-transform: capitalize;
 }

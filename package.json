@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "puppynode",
   "version": "0.0.1",
   "description": "",
   "main": "",
@@ -36,9 +36,9 @@
   "author": "Alice Barker <woof@puppy.codes>",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/puppycodes/puppynode"
   },
-  "homepage": "",
+  "homepage": "https://github.com/puppycodes/puppynode",
   "files": [
     "src",
     "dist",

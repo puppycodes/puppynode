@@ -1,11 +1,9 @@
 ---
 title: woof!
 ---
-<div class="menu">
-  <div class="logotype">
-    <div>Soft—Space</div>
+  <div>
+    <figure>
+      <img src="./image.svg" alt="image" style="width:50px">
+      <figcaption><i>some image</i></figcaption>
+    </figure>
   </div>
-  <div class="logo">
-    <img src="./logo.svg">
-  </div>
-</div>
